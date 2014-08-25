@@ -23,13 +23,13 @@ class AdministrarPacientes extends CI_Controller {
 
 	}
 
-	function eliminarPaciente(){
-                $data["titulo"] = 'Eliminar Paciente';
+	function administrarPaciente(){
+                $data["titulo"] = 'Administrar Pacientes';
 		$data["url_base"]  = $this->config->base_url();                
                 $this->load->view('componentes/header.php', $data);
 		$this->load->view('componentes/navbar.php');
                 $this->load->view('componentes/sidebar.php');
-		$this->load->view('eliminarPaciente.php');                
+		$this->load->view('administrarPaciente.php');                
 		$this->load->view('componentes/modal.php');
 		$this->load->view('componentes/footer.php');
                 
@@ -64,10 +64,10 @@ class AdministrarPacientes extends CI_Controller {
                     case "Añadir Paciente":                       
                         $this->administrarpacientes_model->anadirPaciente($data);
                         $this->index();
-                    break;
+                    break;                    
                     case "Eliminar Paciente":
                         $this->administrarpacientes_model->eliminarPaciente($data);
-                        $this->eliminarPaciente();                        
+                        $this->administrarPaciente();                        
                     break;
                     case "Cancelar":
                         $this->index();
@@ -76,7 +76,7 @@ class AdministrarPacientes extends CI_Controller {
         
         function buscarPaciente(){
             
-            $data["titulo"] = 'Eliminar Paciente';
+            $data["titulo"] = 'Administrar Pacientes';
             $data["url_base"]  = $this->config->base_url();                
             $this->load->view('componentes/header.php', $data);
             $this->load->view('componentes/navbar.php');
@@ -89,7 +89,12 @@ class AdministrarPacientes extends CI_Controller {
             $data = array ('runInfo' =>  $this->input->post('infoRut'));
             switch( $_POST['btoPaciente'] ) {
                     case "Eliminar Paciente":  
-                        $this->administrarpacientes_model->eliminarPaciente($data);                        
+                        $this->administrarpacientes_model->eliminarPaciente($data);
+                        $this->administrarPaciente();
+                    break;
+                    case "Actualizar Paciente":                       
+                        $this->administrarpacientes_model->actualizarPaciente($data);
+                        $this->administrarPaciente();
                     break;
             }
         }

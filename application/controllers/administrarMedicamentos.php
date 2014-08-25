@@ -30,6 +30,10 @@ class AdministrarMedicamentos extends CI_Controller {
                         $this->administrarmedicamentos_model->anadirMedicamento($data);
                         $this->index();
                     break;
+                    case "Actualizar Medicamento":                       
+                        $this->administrarmedicamentos_model->actualizarMedicamento($data);
+                        $this->index();
+                    break;
                     case "Quitar Medicamento":
                         $this->administrarmedicamentos_model->eliminarMedicamento($data);
                         $this->index();                        

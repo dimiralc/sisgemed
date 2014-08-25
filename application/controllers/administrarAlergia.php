@@ -28,6 +28,10 @@ class AdministrarAlergia extends CI_Controller {
                         $this->administraralergias_model->anadirAlergia($data);
                         $this->index();
                     break;
+                    case "Actualizar Alergia":                       
+                        $this->administraralergias_model->actualizarAlergia($data);
+                        $this->index();
+                    break;
                     case "Quitar Alergia":
                         $this->administraralergias_model->eliminarAlergia($data);
                         $this->index();                        

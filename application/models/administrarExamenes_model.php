@@ -1,38 +1,38 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class AdministrarAlergias_model extends CI_Model {
+class AdministrarExamenes_model extends CI_Model {
 	function __construct(){
 		parent:: __construct();
 		$this->load->database();
 	}
 
-	function anadirAlergia($data){
+	function anadirExamen($data){
 		$this->db->insert(
-			'alergias', 
+			'examenes', 
 			array('id'=>$data['id'], 
 				'nombre'=>$data['nombre'], 
-				'alergeno'=>$data['alergeno'],
-				'sintomatologia'=>$data['sintomatologia']));
+				'zona'=>$data['zona'],
+				'efectos'=>$data['efectos']));
 	}
         
-        function actualizarAlergia($data){
+        function actualizarExamen($data){
             $this->db->where('id', $data['id']);
             $this->db->update(
-                    'alergias',
+                    'examenes',
                     array('id'=>$data['id'], 
 				'nombre'=>$data['nombre'], 
-				'alergeno'=>$data['alergeno'],
-				'sintomatologia'=>$data['sintomatologia']));
+				'sistema'=>$data['sistema'],
+				'descripcion'=>$data['descripcion']));
         }
         
-        function eliminarAlergia($data){
+         function eliminarExamen($data){
             $this->db->delete(
-                    'alergias',
+                    'examenes',
                     array('id'=>$data['id']));
         }
         
-        function obtenerAlergia(){
-            $query = $this->db->get('alergias');            
+        function obtenerExamen(){
+            $query = $this->db->get('examenes');            
             if($query->num_rows() > 0){
                 return $query;
             }
@@ -41,9 +41,9 @@ class AdministrarAlergias_model extends CI_Model {
             }
         }
         
-        function buscarAlergia($data){
+        function buscarExamen($data){
             $this->db->where('id', $data['id']);
-            $query = $this->db->get('alergias');            
+            $query = $this->db->get('examenes');            
             if($query->num_rows() > 0){
                 return $query;
             }

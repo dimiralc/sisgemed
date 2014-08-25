@@ -21,6 +21,22 @@ class Administrarpacientes_model extends CI_Model {
 				'enfermedades'=>$data['enfermedades']));
 	}
         
+        function actualizarPaciente($data){
+            $this->db->where('rut', $data[run]);
+            $this->db->update(
+                    'pacientes',
+                    array('rut'=>$data['run'], 
+				'nombre'=>$data['nombre'], 
+				'paterno'=>$data['paterno'],
+				'materno'=>$data['materno'],
+				'telefono'=>$data['telefono'],
+				'direccion'=>$data['direccion'],
+				'ecivil'=>$data['ecivil'],
+				'genero'=>$data['genero'],
+				'estudios'=>$data['estudios'],
+				'enfermedades'=>$data['enfermedades']));
+        }
+        
          function eliminarPaciente($data){
             $this->db->delete(
                     'pacientes',

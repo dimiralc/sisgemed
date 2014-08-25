@@ -29,6 +29,10 @@ class AdministrarEnfermedad extends CI_Controller {
                         $this->administrarpatologias_model->anadirPatologia($data);
                         $this->index();
                     break;
+                    case "Actualizar Patología":                       
+                        $this->administrarpatologias_model->ActualizarPatologia($data);
+                        $this->index();
+                    break;
                     case "Quitar Patología":
                         $this->administrarpatologias_model->eliminarPatologia($data);
                         $this->index();                        
