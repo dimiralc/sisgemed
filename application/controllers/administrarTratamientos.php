@@ -37,6 +37,10 @@ class AdministrarTratamientos extends CI_Controller {
                         $this->administrartratamientos_model->eliminarTratamiento($data);
                         $this->index();                        
                     break;
+                    case "Buscar Tratamiento":
+                        $this->administrartratamientos_model->buscarTratamiento($data);
+                        $this->index();                        
+                    break;
                     case "Cancelar":
                         $this->index();
                     }

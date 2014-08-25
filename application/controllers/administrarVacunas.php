@@ -38,6 +38,10 @@ class AdministrarVacunas extends CI_Controller {
                         $this->administrarvacunas_model->eliminarVacuna($data);
                         $this->index();                        
                     break;
+                    case "Buscar Vacuna":
+                        $this->administrarvacunas_model->buscarVacuna($data);
+                        $this->index();                        
+                    break;
                     case "Cancelar":
                         $this->index();
                     }

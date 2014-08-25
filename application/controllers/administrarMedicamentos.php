@@ -38,6 +38,10 @@ class AdministrarMedicamentos extends CI_Controller {
                         $this->administrarmedicamentos_model->eliminarMedicamento($data);
                         $this->index();                        
                     break;
+                    case "Buscar Medicamento":
+                        $this->administrarmedicamentos_model->buscarMedicamento($data);
+                        $this->index();                        
+                    break;
                     case "Cancelar":
                         $this->index();
                     }
