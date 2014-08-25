@@ -13,7 +13,7 @@
 function LoadCalendarScript(callback){
 	function LoadFullCalendarScript(){
 		if(!$.fn.fullCalendar){
-			$.getScript('plugins/fullcalendar/fullcalendar.js', callback);
+			$.getScript('<?=$url_base;?>plugins/fullcalendar/fullcalendar.js', callback);
 		}
 		else {
 			if (callback && typeof(callback) === "function") {
@@ -22,7 +22,7 @@ function LoadCalendarScript(callback){
 		}
 	}
 	if (!$.fn.moment){
-		$.getScript('plugins/moment/moment.min.js', LoadFullCalendarScript);
+		$.getScript('<?=$url_base;?>plugins/moment/moment.min.js', LoadFullCalendarScript);
 	}
 	else {
 		LoadFullCalendarScript();

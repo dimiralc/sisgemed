@@ -92,8 +92,8 @@
                              <span class="hidden-xs">Soporte</span>
                     </a>
                     <ul class="dropdown-menu">
-                            <li><a  href="#myModal1">Contactenos</a></li>
-                            <li><a  href="#myModal">Acerca de Sisgemed</a></li>
+                            <li><a data-toggle="modal" href="#myModal1">Contactenos</a></li>
+                            <li><a data-toggle="modal" href="#myModal">Acerca de Sisgemed</a></li>
                     </ul>
                 </li>               
             </ul>
