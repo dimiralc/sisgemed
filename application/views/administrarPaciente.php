@@ -54,7 +54,7 @@
                                             <small>Preexistencias</small>
                                         </div>
                                     <br>
-                                    <div class="row">                                       
+                                    <div class="row">  
                                         <div class="col-xs-2">
                                             <input type="text" class="form-control" name="infoRut"  value="<?php echo $paciente->rut;?>">
                                         </div>

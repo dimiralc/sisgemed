@@ -28,7 +28,7 @@
                     </a>
                     <ul class="dropdown-menu">
                             <li><a href="<?=$url_base;?>administrarPacientes/registrarPaciente">Nuevo Paciente</a></li>
-                            <li><a href="<?=$url_base;?>administrarPacientes/eliminarPaciente">Administrar Pacientes</a></li>                            
+                            <li><a href="<?=$url_base;?>administrarPacientes/administrarPaciente">Administrar Pacientes</a></li>                            
                     </ul>
                 </li>
                 <li class="dropdown">

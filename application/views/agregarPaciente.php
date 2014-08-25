@@ -150,7 +150,25 @@
                                        </select>
                                    </div> 
                                 </div>  
-                                
+                                <div class="col-xs-6">
+                                    <div class="form-group">
+                                      <legend>Agregar Imagen del Paciente</legend>
+                                        <!--$ERROR MUESTRA LOS ERRORES QUE PUEDAN HABER AL SUBIR LA IMAGEN-->
+                                        <?=@$error?>
+                                        <div id="formulario_imagenes">
+                                            <span><?php echo validation_errors(); ?></span>
+                                        <?=form_open_multipart("upload/do_upload")?>
+                                            <br>
+                                            <label class="col-sm-4 control-label">Nombre Paciente</label>
+                                            <input type="text" name="titulo" />
+                                            <br><br>
+                                            <label class="col-sm-4 control-label">Buscar Imagen</label>
+                                            <input type="file" name="userfile"/><br />
+                                            <input type="submit" value="Subir imágenes" class="btn btn-primary btn-label-left" />
+                                        <?=form_close()?>
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="form-group">
                                         <div class="col-sm-offset-8 col-sm-2">
                                               <?= form_submit('btoPaciente','Añadir Paciente', $attributes)?>                        
